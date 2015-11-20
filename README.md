@@ -48,38 +48,38 @@ You can set your own options by object like this.
         
     });
 
-* url(string)
+**url(string)**
 
 
     URL that receive image data which is data URIs of PNG.  
     A folder called "examples" has a php file to receive image data and save it.
     
     
-* buttonPosition(string: `top-left`, `top-right`, `bottom-left` or `bottom-right`)
+**buttonPosition(string: `top-left`, `top-right`, `bottom-left` or `bottom-right`)**
 
 
     Bug GUI's button position.
     Default is `top-right`.
     
-* color(string)
+**color(string)**
 
 
     Color to draw on canvas.
     e.g. "red", "#ff0000"
     
-* lineWidth(number)
+**lineWidth(number)**
 
 
     Line width to draw on canvas.
     Default is 3.
     
-* fontSize(number)
+**fontSize(number)**
 
 
     Font size to draw on canvas.
     Default is 16.
     
-* messages(object)
+**messages(object)**
 
 
     Sentences for messages that Bug GUI provides. (A folder called messages has Japanese messages)
@@ -101,13 +101,13 @@ You can set your own options by object like this.
 
     Note: Please let me know if you notice mistakes in English or you have better expressions. Thank you in advance!
     
-* parameters(object)
+**parameters(object)**
 
 
     Additional parameters to send the access detail.
     I believe you should use this option to send GET or(and) POST values from server side program like PHP.    
      
-* callbacks(object: `done`, `fail` and `always`)
+**callbacks(object: `done`, `fail` and `always`)**
 
 
     You can set 3 type of callbacks named "done", "fail" and "always" like this.  
@@ -130,7 +130,7 @@ You can set your own options by object like this.
         }
     }
     
-* availableButtons(array)
+**availableButtons(array)**
 
 
     Buttons you'd like to show.
