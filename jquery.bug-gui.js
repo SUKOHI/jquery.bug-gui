@@ -240,15 +240,15 @@
             var buttonPosition = BG.buttonPositions[BG.options.buttonPosition];
             var controllerFloat = ($.inArray(BG.options.buttonPosition, ['top-left', 'bottom-left']) == -1) ? 'float:right;' : 'float:left;'
             var styleSheet = '<style type="text/css">'+
-                '#'+ BG.ids.controller +'{ position:fixed;z-index:'+ BG.getZIndex(1) +';'+ buttonPosition +' }'+
+                '#'+ BG.ids.controller +'{ position:fixed;z-index:'+ BG.getZIndex(2) +';'+ buttonPosition +' }'+
                 '#'+ BG.ids.controller +' *{ line-height:0px; }'+
-                '#'+ BG.ids.canvas +' { position:absolute;top:0;left:0; }'+
+                '#'+ BG.ids.canvas +' { position:absolute;top:0;left:0;z-index:'+ BG.getZIndex() +'; }'+
                 '#'+ BG.ids.canvas +' canvas { cursor: text }'+
                 '#'+ BG.ids.message +'{ font-size:16px;color:#dedede;padding:5px 15px;margin:0 20px;background:#555;opacity: 0.95;border-radius:5px; }'+
                 '#'+ BG.ids.bugButton +'{ cursor:pointer; }'+
                 '#'+ BG.ids.textInput +'{ color:#ff0000;border:none;background:none;padding:0;margin:0;resize:none;outline:none;overflow:hidden;font-size:'+ BG.options.fontSize +'px;line-height:'+ BG.options.lineHeight +'em; }'+
                 '#'+ BG.ids.textInput +':focus { color:#ff0000; }'+
-                '#'+ BG.ids.textInputBox +'{ position:absolute;top:-999px;left:-999px;border:none;background:#ffeeee;padding:0;margin:0;z-index:'+ BG.getZIndex() +' }'+
+                '#'+ BG.ids.textInputBox +'{ position:absolute;top:-999px;left:-999px;border:none;background:#ffeeee;padding:0;margin:0;z-index:'+ BG.getZIndex(1) +' }'+
                 '#'+ BG.ids.textInputSettle +'{ cursor:pointer;box-shadow: 1px 1px 1px 1px #666; }'+
                 '#'+ BG.ids.textRuler +'{ position:absolute;top:-999px;left:-999px;padding:0; }'+
                 '#'+ BG.ids.downloadLink +'{ text-decoration:none;outline:none; }'+
