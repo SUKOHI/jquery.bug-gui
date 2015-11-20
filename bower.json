@@ -1,0 +1,26 @@
+{
+  "name": "jquery.bug-gui",
+  "version": "1.0.2",
+  "authors": [
+    "sukohi <capilano.sukohi@gmail.com>"
+  ],
+  "description": "A jQuery plugin to make, send and download bug report by screenshot.",
+  "main": "jquery.bug-gui.js",
+  "keywords": [
+    "bug",
+    "report",
+    "gui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.0",
+    "html2canvas": "0.4.1"
+  }
+}
