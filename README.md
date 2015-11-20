@@ -152,7 +152,7 @@ Note: As of 20 Nov 2015, unfortunately IE and Safari don't support "download" op
 **target(object)**
     
 You can change target that you'd like to take a screenshot.  
-In usual you need to set this.
+In usual you don't need to set this.
 
     target: {
         id: 'YOUR-ID'
