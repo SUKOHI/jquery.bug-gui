@@ -148,7 +148,27 @@ You can set your own options by object like this.
     ]
     
 Note: As of 20 Nov 2015, unfortunately IE and Safari don't support "download" option. See [here](http://caniuse.com/#search=download)
+
+**target(object)**
     
+You can change target that you'd like to take a screenshot.  
+In usual you need to set this.
+
+    target: {
+        id: 'YOUR-ID'
+    }
+    
+    // or 
+
+    target: {
+        className: 'YOUR-CLASS-NAME'
+    }
+    
+The next is for [Google Material Design Lite](http://www.getmdl.io/templates/index.html).
+    
+    target: {
+        className: 'mdl-layout__content'
+    }
     
 #License
 

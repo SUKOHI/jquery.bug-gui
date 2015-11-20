@@ -211,7 +211,33 @@
             var scrollLeft = $(window).scrollLeft();
             $('#'+ BG.ids.controller).css('display', 'none');
 
-            html2canvas(document.body, {
+            var target;
+
+            if(typeof(BG.options.target) == 'object') {
+
+                $.each(BG.options.target, function(type, value){
+
+                    if(type == 'className') {
+
+                        target = document.getElementsByClassName(value)[0];
+
+                    } else if(type == 'id') {
+
+                        target = document.getElementById(value);
+
+                    }
+
+                    return;
+
+                });
+
+            } else {
+
+                target = document.body;
+
+            }
+
+            html2canvas(target, {
                 background: '#000000',
                 onrendered: function(canvas) {
 
