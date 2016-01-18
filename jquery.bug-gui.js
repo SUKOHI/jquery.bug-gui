@@ -396,39 +396,50 @@
                     if(confirm(BG.messages.send)) {
 
                         var imageData = BG.getImageData();
-                        var url = (BG.options.url == undefined) ? '' : BG.options.url;
-                        var params = BG.parameters;
-                        params.editedData = BG.editedData();
-                        params.image_data = imageData;
-                        params.file_name = BG.getFileName();
 
-                        $.post(url, params).done(function(json){
+                        if(typeof(BG.options.callbacks.done) == 'undefined' &&
+                            typeof(BG.options.callbacks.fail) == 'undefined' &&
+                            typeof(BG.options.callbacks.always) == 'function') {
 
-                                if(typeof(BG.options.callbacks.done) == 'function') {
+                            BG.options.callbacks.always(imageData);
 
-                                    BG.options.callbacks.done(json, imageData);
+                        } else {
 
-                                }
+                            var url = (BG.options.url == undefined) ? '' : BG.options.url;
+                            var params = BG.parameters;
+                            params.editedData = BG.editedData();
+                            params.image_data = imageData;
+                            params.file_name = BG.getFileName();
 
-                            }, 'json')
-                            .fail(function(){
+                            $.post(url, params).done(function(json){
 
-                                if(typeof(BG.options.callbacks.fail) == 'function') {
+                                    if(typeof(BG.options.callbacks.done) == 'function') {
 
-                                    BG.options.callbacks.fail(imageData);
+                                        BG.options.callbacks.done(json, imageData);
 
-                                }
+                                    }
 
-                            })
-                            .always(function(){
+                                }, 'json')
+                                .fail(function(){
 
-                                if(typeof(BG.options.callbacks.always) == 'function') {
+                                    if(typeof(BG.options.callbacks.fail) == 'function') {
 
-                                    BG.options.callbacks.always(imageData);
+                                        BG.options.callbacks.fail(imageData);
 
-                                }
+                                    }
 
-                            });
+                                })
+                                .always(function(){
+
+                                    if(typeof(BG.options.callbacks.always) == 'function') {
+
+                                        BG.options.callbacks.always(imageData);
+
+                                    }
+
+                                });
+
+                        }
 
                     }
 

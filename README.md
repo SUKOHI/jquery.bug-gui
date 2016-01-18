@@ -130,6 +130,8 @@ You can set your own options by object like this.
         }
     }
     
+* Note: If only `always` is set, although `always` function will be called but ajax will not be fired.
+    
 **availableButtons(array)**
 
 
